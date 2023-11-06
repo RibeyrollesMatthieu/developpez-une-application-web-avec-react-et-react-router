@@ -7,9 +7,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.625rem;
   height: $height;
   max-height: $height;
-  padding: $padding-y var(--padding-x-page);
+  padding: $padding-y var(--padding-x-page) 0 var(--padding-x-page);
 
   & > .logo {
     max-height: 100%;
@@ -25,6 +26,7 @@
       font-size: 0.75rem;
       text-transform: uppercase;
       color: colors.$red;
+      white-space: nowrap;
     }
   }
 }
