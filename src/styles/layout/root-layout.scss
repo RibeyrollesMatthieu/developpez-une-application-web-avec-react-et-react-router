@@ -1,5 +1,3 @@
-@use './../mixins/padding.scss' as padding;
-
 body,
 html {
   height: 100%;
@@ -12,7 +10,6 @@ html {
 }
 
 main {
-  @include padding.x(var(--padding-x-page));
-  @include padding.y(1.6875rem);
+  padding: 1.6875rem var(--padding-x-page);
   flex-grow: 1;
 }

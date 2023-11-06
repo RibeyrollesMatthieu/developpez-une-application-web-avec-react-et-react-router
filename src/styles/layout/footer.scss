@@ -1,5 +1,4 @@
 @use './../colors' as colors;
-@use './../mixins/padding.scss' as padding;
 
 .root-footer {
   display: flex;
@@ -10,7 +9,5 @@
   color: colors.$white;
   text-align: center;
   font-size: 0.75rem;
-
-  @include padding.x(7.5rem);
-  @include padding.y(3.75rem);
+  padding: 3.75rem 7.5rem;
 }
