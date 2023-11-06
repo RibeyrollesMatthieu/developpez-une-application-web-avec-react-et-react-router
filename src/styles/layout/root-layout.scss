@@ -20,6 +20,7 @@ main {
   padding: var(--padding-y) var(--padding-x-page);
   flex-grow: 1;
   max-width: var(--content-max-w);
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
 }

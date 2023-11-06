@@ -1,0 +1,70 @@
+@use './../colors' as colors;
+@use './../breakpoints' as breakpoints;
+
+.dropdown {
+  $radius: 0.3125rem;
+  border-radius: $radius;
+  background-color: colors.$gray;
+  overflow: hidden;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.8125rem;
+    padding: 0.625rem;
+    color: colors.$white;
+    border-radius: $radius;
+    background-color: colors.$red;
+
+    & > button {
+      background-color: inherit;
+      border: none;
+      cursor: pointer;
+      margin-left: auto;
+    }
+
+    .chevron {
+      transition: transform 250ms;
+      transform: rotate(180deg);
+    }
+  }
+
+  &-content {
+    border-radius: 0 0 $radius $radius;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 250ms ease-out;
+    font-size: 0.75rem;
+
+    & > p {
+      padding: 0.8125rem 1.25rem;
+      max-width: inherit;
+    }
+  }
+
+  &.open {
+    .dropdown-header .chevron {
+      transform: rotate(0);
+    }
+
+    .dropdown-content {
+      max-height: 100vh;
+      transition: max-height 250ms ease-in;
+    }
+  }
+}
+
+@media only screen and (min-width: breakpoints.$lg) {
+  .dropdown {
+    &-header {
+      font-size: 1.5rem;
+      padding: 0.625rem 0.9375rem;
+    }
+
+    &-content > p {
+      font-size: 1.125rem;
+      padding: 1rem 1.25rem;
+    }
+  }
+}
