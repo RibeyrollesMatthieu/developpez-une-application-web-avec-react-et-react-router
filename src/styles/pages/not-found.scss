@@ -1,4 +1,5 @@
 @use './../colors' as colors;
+@use './../breakpoints' as breakpoints;
 
 .not-found {
   display: flex;
@@ -19,5 +20,23 @@
   & > a {
     font-size: 0.875rem;
     text-decoration: underline;
+  }
+}
+
+@media only screen and (min-width: breakpoints.$lg) {
+  .not-found {
+    gap: 8.6875rem;
+
+    &-code {
+      font-size: 18rem;
+    }
+
+    &-message {
+      font-size: 2.25rem;
+    }
+
+    & > a {
+      font-size: 1.125rem;
+    }
   }
 }
