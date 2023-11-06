@@ -1,4 +1,5 @@
 @use './../colors' as colors;
+@use './../breakpoints' as breakpoints;
 
 .root-footer {
   display: flex;
@@ -10,4 +11,11 @@
   text-align: center;
   font-size: 0.75rem;
   padding: 3.75rem 7.5rem;
+}
+
+@media only screen and (min-width: breakpoints.$lg) {
+  .root-footer {
+    gap: 1.785rem;
+    font-size: 1.5rem;
+  }
 }

@@ -1,9 +1,7 @@
 @use './../colors' as colors;
+@use './../breakpoints' as breakpoints;
 
 .hero {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   border-radius: 0.625rem;
   height: 6.9375rem;
   background-repeat: no-repeat;
@@ -11,13 +9,34 @@
   background-position: center;
   overflow: hidden;
 
-  .hero-content {
-    padding: 2rem 1rem;
+  &-content {
     color: colors.$white;
     background: rgba(colors.$black, 0.3);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 1rem;
 
     p {
       max-width: 13.5625rem;
+    }
+  }
+}
+
+@media only screen and (min-width: breakpoints.$lg) {
+  .hero {
+    height: 13.9375rem;
+
+    &-content {
+      align-items: center;
+
+      p {
+        max-width: initial;
+        text-align: center;
+        font-size: 3rem;
+      }
     }
   }
 }

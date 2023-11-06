@@ -1,4 +1,5 @@
 @use './../colors' as colors;
+@use './../breakpoints' as breakpoints;
 
 .card {
   position: relative;
@@ -11,10 +12,11 @@
   border-radius: 0.625rem;
   color: colors.$white;
   height: 15.9375rem;
-  width: min(100%, 20.9375rem);
+  width: min(100%, 21.25rem);
   padding: 0.9375rem 1.25rem;
   isolation: isolate;
   overflow: hidden;
+  font-size: 1.125rem;
 
   &::before {
     content: '';
@@ -24,5 +26,12 @@
     inset: 0;
     background-image: linear-gradient(to bottom, transparent, rgba(colors.$black, 0.8));
     z-index: -1;
+  }
+}
+
+@media only screen and (min-width: breakpoints.$lg) {
+  .card {
+    height: 21.25rem;
+    width: 21.25rem;
   }
 }

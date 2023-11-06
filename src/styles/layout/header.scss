@@ -1,16 +1,18 @@
 @use './../colors' as colors;
+@use './../breakpoints' as breakpoints;
 
 .root-header {
-  $padding-y: 1.25rem;
-  $height: calc(2.93rem + calc(2 * $padding-y));
+  --padding-y: 1.25rem;
+  --height: calc(2.93rem + var(--padding-y));
+  --gap: 1.625rem;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1.625rem;
-  height: $height;
-  max-height: $height;
-  padding: $padding-y var(--padding-x-page) 0 var(--padding-x-page);
+  gap: var(--gap);
+  height: var(--height);
+  max-height: var(--height);
+  padding: var(--padding-y) var(--padding-x-page) 0 var(--padding-x-page);
 
   & > .logo {
     max-height: 100%;
@@ -20,13 +22,25 @@
 
   & > nav > ul {
     display: flex;
-    gap: 1.625rem;
+    gap: var(--gap);
 
     a {
       font-size: 0.75rem;
       text-transform: uppercase;
       color: colors.$red;
       white-space: nowrap;
+    }
+  }
+}
+
+@media only screen and (min-width: breakpoints.$lg) {
+  .root-header {
+    --gap: 3.5625rem;
+    --padding-y: 2.8125rem;
+    --height: calc(4.25rem + var(--padding-y));
+
+    & > nav > ul a {
+      font-size: 1.5rem;
     }
   }
 }

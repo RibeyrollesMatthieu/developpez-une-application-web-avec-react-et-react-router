@@ -1,3 +1,5 @@
+@use './../breakpoints' as breakpoints;
+
 body,
 html {
   height: 100%;
@@ -10,6 +12,13 @@ html {
 }
 
 main {
-  padding: 1.6875rem var(--padding-x-page);
+  --padding-y: 1.6875rem;
+  padding: var(--padding-y) var(--padding-x-page);
   flex-grow: 1;
+}
+
+@media only screen and (min-width: breakpoints.$lg) {
+  main {
+    --padding-y: 3.125rem;
+  }
 }
