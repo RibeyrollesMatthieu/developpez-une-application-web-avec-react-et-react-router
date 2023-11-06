@@ -5,18 +5,20 @@ import { Link } from 'react-router-dom';
 export const Header = () => {
   return (
     <header className='root-header'>
-      <Logo />
+      <div className='content'>
+        <Logo />
 
-      <nav>
-        <ul>
-          <li>
-            <Link to='/'>Accueil</Link>
-          </li>
-          <li>
-            <Link to='/about'>À propos</Link>
-          </li>
-        </ul>
-      </nav>
+        <nav>
+          <ul>
+            <li>
+              <Link to='/'>Accueil</Link>
+            </li>
+            <li>
+              <Link to='/about'>À propos</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

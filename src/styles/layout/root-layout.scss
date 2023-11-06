@@ -5,6 +5,10 @@ html {
   height: 100%;
 }
 
+:root {
+  --content-max-w: 90rem;
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -15,6 +19,9 @@ main {
   --padding-y: 1.6875rem;
   padding: var(--padding-y) var(--padding-x-page);
   flex-grow: 1;
+  max-width: var(--content-max-w);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (min-width: breakpoints.$lg) {
