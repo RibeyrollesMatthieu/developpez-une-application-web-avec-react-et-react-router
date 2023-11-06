@@ -1,0 +1,28 @@
+@use './../colors' as colors;
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color: colors.$red;
+  background-position: center;
+  background-size: cover;
+  border-radius: 0.625rem;
+  color: colors.$white;
+  height: 15.9375rem;
+  width: min(100%, 20.9375rem);
+  padding: 0.9375rem 1.25rem;
+  isolation: isolate;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, transparent, rgba(colors.$black, 0.8));
+    z-index: -1;
+  }
+}
