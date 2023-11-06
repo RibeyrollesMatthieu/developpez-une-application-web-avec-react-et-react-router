@@ -1,0 +1,32 @@
+@use './../mixins/padding.scss' as padding;
+@use './../colors' as colors;
+
+.root-header {
+  $padding-y: 1.25rem;
+  $height: calc(2.93rem + calc(2 * $padding-y));
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $height;
+  max-height: $height;
+  @include padding.x(var(--padding-x-page));
+  @include padding.y($padding-y);
+
+  & > .logo {
+    max-height: 100%;
+    height: 100%;
+    width: auto;
+  }
+
+  & > nav > ul {
+    display: flex;
+    gap: 1.625rem;
+
+    a {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      color: colors.$red;
+    }
+  }
+}

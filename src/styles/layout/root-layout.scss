@@ -1,0 +1,18 @@
+@use './../mixins/padding.scss' as padding;
+
+body,
+html {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+main {
+  @include padding.x(var(--padding-x-page));
+  @include padding.y(1.6875rem);
+  flex-grow: 1;
+}

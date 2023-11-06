@@ -1,0 +1,23 @@
+@use './../colors' as colors;
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  gap: 7.0625rem;
+  color: colors.$red;
+  text-align: center;
+
+  &-code {
+    font-size: 6rem;
+    font-weight: 700;
+  }
+
+  &-message {
+    font-size: 1.125rem;
+  }
+
+  & > a {
+    font-size: 0.875rem;
+    text-decoration: underline;
+  }
+}

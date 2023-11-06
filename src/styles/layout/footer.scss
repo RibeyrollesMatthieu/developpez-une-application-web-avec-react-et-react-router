@@ -1,0 +1,16 @@
+@use './../colors' as colors;
+@use './../mixins/padding.scss' as padding;
+
+.root-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: colors.$black;
+  color: colors.$white;
+  text-align: center;
+  font-size: 0.75rem;
+
+  @include padding.x(7.5rem);
+  @include padding.y(3.75rem);
+}
