@@ -6,6 +6,7 @@
   border-radius: $radius;
   background-color: colors.$gray;
   overflow: hidden;
+  height: fit-content;
 
   &-header {
     display: flex;
@@ -26,7 +27,7 @@
 
     .chevron {
       transition: transform 250ms;
-      transform: rotate(180deg);
+      transform: rotate(0);
     }
   }
 
@@ -36,16 +37,21 @@
     overflow: hidden;
     transition: max-height 250ms ease-out;
     font-size: 0.75rem;
+    color: colors.$red;
 
-    & > p {
+    & > * {
       padding: 0.8125rem 1.25rem;
       max-width: inherit;
     }
   }
 
+  .chevron {
+    width: 70%;
+  }
+
   &.open {
     .dropdown-header .chevron {
-      transform: rotate(0);
+      transform: rotate(180deg);
     }
 
     .dropdown-content {
@@ -62,9 +68,16 @@
       padding: 0.625rem 0.9375rem;
     }
 
-    &-content > p {
+    &-content {
       font-size: 1.125rem;
-      padding: 1rem 1.25rem;
+
+      & > * {
+        padding: 1rem 1.25rem;
+      }
+    }
+
+    .chevron {
+      width: auto;
     }
   }
 }

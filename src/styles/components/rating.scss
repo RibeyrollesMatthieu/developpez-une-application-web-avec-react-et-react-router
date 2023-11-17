@@ -1,0 +1,12 @@
+@use './../breakpoints' as breakpoints;
+
+.rating {
+  display: flex;
+  gap: 0.125rem;
+}
+
+@media only screen and (min-width: breakpoints.$lg) {
+  .rating {
+    gap: 0.25rem;
+  }
+}

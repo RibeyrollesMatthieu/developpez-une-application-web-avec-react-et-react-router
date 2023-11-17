@@ -1,0 +1,84 @@
+@use './../colors' as colors;
+@use './../breakpoints' as breakpoints;
+
+.carousel {
+  border-radius: 1.5625rem;
+  width: 100%;
+  height: 15.9375rem;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 0.9375rem;
+  background-color: colors.$loadingGray;
+
+  .carousel-indicator {
+    display: none;
+  }
+
+  .carousel-indicator,
+  .carousel-buttons {
+    padding: 1.4594rem;
+  }
+
+  .carousel-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+
+    .carousel-button {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      filter: drop-shadow(0 0 0.2rem rgba(0, 0, 0, 0.3));
+
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+
+      &-next {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .carousel-slider,
+  .carousel-slide,
+  .carousel-slide > img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .carousel-slide > img {
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+@media only screen and (min-width: breakpoints.$md) {
+  .carousel {
+    height: 25.9375rem;
+    margin-bottom: 1.875rem;
+
+    .carousel-indicator {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      color: colors.$white;
+      text-shadow: 0 0 0.25rem rgba(0, 0, 0, 1);
+    }
+  }
+}
+
+@media only screen and (min-width: breakpoints.$lg) {
+  .carousel {
+    .carousel-button svg {
+      width: inherit !important;
+      height: inherit !important;
+    }
+  }
+}

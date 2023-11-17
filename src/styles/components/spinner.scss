@@ -1,0 +1,28 @@
+@use './../colors' as colors;
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+
+  .spinner {
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    --size: 2rem;
+    height: var(--size, 2rem);
+    width: var(--size, 2rem);
+    border-radius: var(--size, 2rem);
+    border: solid calc(var(--size, 2rem) / 4) colors.$red;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+  }
+}

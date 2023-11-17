@@ -1,13 +1,11 @@
+import { RootLayout } from '@/components/layout/RootLayout';
 import { NotFoundPage } from '@/components/pages/NotFoundPage';
 import { createBrowserRouter } from 'react-router-dom';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    lazy: async () => {
-      let { RootLayout } = await import('@/components/layout/RootLayout');
-      return { Component: RootLayout };
-    },
+    element: <RootLayout />,
     children: [
       {
         path: '',

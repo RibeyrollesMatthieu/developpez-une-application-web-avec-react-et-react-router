@@ -7,6 +7,10 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.25rem;
+
+  & > a {
+    width: min(100%, 21.25rem);
+  }
 }
 
 @media only screen and (min-width: breakpoints.$lg) {
@@ -15,5 +19,23 @@
     border-radius: 1.5625rem;
     padding: 3.5rem 3.125rem;
     gap: 3.75rem;
+
+    & > a {
+      height: 21.25rem;
+      width: 21.25rem;
+
+      & > .card {
+        height: 100%;
+      }
+    }
+
+    & > a > .card {
+      background-size: auto 100%;
+      transition: background-size 350ms;
+    }
+
+    & > a:hover > .card {
+      background-size: auto 120%;
+    }
   }
 }

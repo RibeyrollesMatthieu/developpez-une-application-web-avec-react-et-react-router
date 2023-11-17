@@ -8,6 +8,7 @@
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  background-color: colors.$loadingGray;
 
   &-content {
     color: colors.$white;
@@ -20,7 +21,8 @@
     padding: 2rem 1rem;
 
     p {
-      max-width: 13.5625rem;
+      max-width: 90%;
+      font-size: 1.5rem;
     }
   }
 }
@@ -33,6 +35,7 @@
       align-items: center;
 
       p {
+        max-width: 13.5625rem;
         max-width: initial;
         text-align: center;
         font-size: 3rem;

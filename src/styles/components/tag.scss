@@ -1,0 +1,21 @@
+@use './../colors' as colors;
+@use './../breakpoints' as breakpoints;
+
+.tag {
+  background-color: colors.$red;
+  border-radius: 0.625rem;
+  padding: 0.125rem 0.5rem;
+  color: colors.$white;
+  display: inline-block;
+  font-size: 0.625rem;
+  min-width: 5.25rem;
+  text-align: center;
+}
+
+@media only screen and (min-width: breakpoints.$md) {
+  .tag {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    min-width: 7.1875rem;
+  }
+}

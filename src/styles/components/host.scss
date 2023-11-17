@@ -1,0 +1,48 @@
+@use './../colors' as colors;
+@use './../breakpoints' as breakpoints;
+
+.host {
+  display: flex;
+  align-items: center;
+  gap: 0.6563rem;
+
+  & > p {
+    color: colors.$red;
+    text-align: end;
+    font-size: 0.75rem;
+  }
+
+  img {
+    --size: 2rem;
+
+    height: var(--size);
+    width: var(--size);
+    border-radius: var(--size);
+  }
+}
+
+@media only screen and (min-width: breakpoints.$md) {
+  .host {
+    gap: 0.625rem;
+
+    & > p {
+      font-size: 1rem;
+    }
+
+    img {
+      --size: 3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: breakpoints.$lg) {
+  .host {
+    & > p {
+      font-size: 1.125rem;
+    }
+
+    img {
+      --size: 4rem;
+    }
+  }
+}

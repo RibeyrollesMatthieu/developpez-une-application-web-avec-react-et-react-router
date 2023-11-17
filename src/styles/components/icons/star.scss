@@ -1,0 +1,22 @@
+@use './../../colors' as colors;
+@use './../../breakpoints' as breakpoints;
+
+.star {
+  height: 1.125rem;
+
+  path {
+    fill: #e3e3e3;
+  }
+
+  &.filled {
+    path {
+      fill: colors.$red;
+    }
+  }
+}
+
+@media only screen and (min-width: breakpoints.$lg) {
+  .star {
+    height: 2.25rem;
+  }
+}
