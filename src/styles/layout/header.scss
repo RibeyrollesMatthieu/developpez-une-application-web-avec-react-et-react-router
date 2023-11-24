@@ -33,6 +33,10 @@
         text-transform: uppercase;
         color: colors.$red;
         white-space: nowrap;
+
+        &.active {
+          text-decoration: underline;
+        }
       }
     }
   }

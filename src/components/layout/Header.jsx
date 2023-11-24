@@ -1,6 +1,6 @@
 import { Logo } from '@/components/Logo';
 import '@/styles/layout/header.scss';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const Header = () => {
   return (
@@ -13,10 +13,14 @@ export const Header = () => {
         <nav>
           <ul>
             <li>
-              <Link to='/'>Accueil</Link>
+              <NavLink to='/' exact>
+                Accueil
+              </NavLink>
             </li>
             <li>
-              <Link to='/about'>À propos</Link>
+              <NavLink to='/about' exact>
+                À propos
+              </NavLink>
             </li>
           </ul>
         </nav>
